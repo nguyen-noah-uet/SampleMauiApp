@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="SampleMauiApp.Views.AddProductGroupPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:SampleMauiApp.Views"
+    xmlns:vm="clr-namespace:SampleMauiApp.ViewModels"
+    x:DataType="{x:Type vm:AddProductGroupViewModel}"
+    Title="{Binding Title}"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout>
+                <VerticalStackLayout Margin="30, 15">
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Label Text="Name:" VerticalOptions="Center"/>
+                        <Entry Grid.Column="1" Margin="25,0,0,0" Text="{Binding ProductGroup.Name}"/>
+                    </Grid>
+                    <Button Text="Save" Command="{Binding SaveCommand}" Margin="5" HorizontalOptions="Center" MinimumWidthRequest="135"/>
+                    <Button Text="Cancel" Command="{Binding CancelCommand}" Margin="5" HorizontalOptions="Center" MinimumWidthRequest="135"/>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
